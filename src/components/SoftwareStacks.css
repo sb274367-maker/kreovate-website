@@ -1,0 +1,109 @@
+.software-stacks {
+  position: relative;
+}
+
+.stacks-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+/* Card */
+.stack-card {
+  background: var(--color-card-bg);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--color-card-border);
+  border-top: 2px solid var(--color-accent);
+  border-radius: 8px;
+  transition: all var(--transition-normal);
+  position: relative;
+  overflow: hidden;
+}
+
+.stack-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px -20px rgba(0, 0, 0, 0.8);
+  border-color: rgba(255, 102, 0, 0.4);
+}
+
+/* Image */
+.stack-image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 160px;
+  overflow: hidden;
+}
+
+.stack-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.stack-card:hover .stack-image {
+  transform: scale(1.06);
+}
+
+.stack-image-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0.65) 100%);
+}
+
+/* Icon badge bottom-right */
+.stack-icon {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.78);
+  border-radius: 50%;
+  color: var(--color-accent);
+  border: 2px solid rgba(255, 102, 0, 0.45);
+  box-shadow: 0 0 14px rgba(255, 102, 0, 0.3);
+  backdrop-filter: blur(4px);
+  z-index: 2;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.stack-card:hover .stack-icon {
+  transform: scale(1.1);
+  box-shadow: 0 0 22px rgba(255, 102, 0, 0.55);
+}
+
+/* Body */
+.stack-body {
+  padding: 1.25rem 1.5rem 1.75rem;
+}
+
+.stack-title {
+  color: var(--color-secondary);
+  font-size: 1.1rem;
+  margin-bottom: 0.6rem;
+  font-family: var(--font-mono);
+}
+
+.stack-description {
+  color: var(--color-slate-light);
+  font-size: 0.88rem;
+  line-height: 1.6;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .stacks-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .stacks-grid {
+    grid-template-columns: 1fr;
+  }
+}

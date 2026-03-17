@@ -1,0 +1,74 @@
+.mcu-container {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mcu-symbol {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  overflow: visible;
+  filter: drop-shadow(0 0 10px rgba(255, 102, 0, 0.3));
+}
+
+.mcu-core {
+  transition: all 0.3s ease;
+}
+
+.mcu-container:hover .mcu-core {
+  filter: drop-shadow(0 0 15px rgba(255, 102, 0, 0.6));
+}
+
+.mcu-animated-traces path {
+  stroke-dasharray: 200;
+  stroke-dashoffset: 200;
+  animation: tracePulse 3s infinite linear;
+}
+
+.mcu-animated-traces path:nth-child(2n) {
+  animation-delay: 1.5s;
+  animation-direction: reverse;
+}
+
+.mcu-animated-traces path:nth-child(3n) {
+  animation-delay: 0.75s;
+  animation-duration: 4s;
+}
+
+@keyframes tracePulse {
+  0% { stroke-dashoffset: 200; opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { stroke-dashoffset: -200; opacity: 0; }
+}
+
+.mcu-nodes circle {
+  transition: all 0.3s ease;
+}
+
+.mcu-nodes circle:hover {
+  fill: var(--color-accent);
+  filter: drop-shadow(0 0 8px var(--color-accent));
+}
+
+.glow-orb {
+  position: absolute;
+  width: 250px;
+  height: 250px;
+  background: radial-gradient(circle, rgba(255, 102, 0, 0.15) 0%, rgba(0, 0, 0, 0) 70%);
+  z-index: 1;
+  animation: pulseOrb 4s infinite alternate;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@keyframes pulseOrb {
+  0% { transform: translate(-50%, -50%) scale(0.9); opacity: 0.5; }
+  100% { transform: translate(-50%, -50%) scale(1.1); opacity: 1; }
+}
