@@ -4,67 +4,27 @@
 
 .products-grid {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
   margin-top: 3rem;
-}
-
-/* First 3 cards: each spans 2 of 6 columns → 3 equal cards per row */
-.product-card:nth-child(1),
-.product-card:nth-child(2),
-.product-card:nth-child(3) {
-  grid-column: span 2;
-}
-
-/* 4th card: columns 2-4 (centred in a 6-col grid) */
-.product-card:nth-child(4) {
-  grid-column: 2 / 4;
-}
-
-/* 5th card: columns 4-6 (centred in a 6-col grid) */
-.product-card:nth-child(5) {
-  grid-column: 4 / 6;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 @media (max-width: 1200px) {
   .products-grid {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
-  }
-
-  .product-card:nth-child(1),
-  .product-card:nth-child(2),
-  .product-card:nth-child(3) {
-    grid-column: span 1;
-  }
-
-  .product-card:nth-child(4) {
-    grid-column: 1;
-  }
-
-  .product-card:nth-child(5) {
-    grid-column: 2;
+    max-width: 900px;
   }
 }
 
 @media (max-width: 768px) {
   .products-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
-  }
-
-  .product-card:nth-child(1),
-  .product-card:nth-child(2),
-  .product-card:nth-child(3) {
-    grid-column: span 1;
-  }
-
-  .product-card:nth-child(4) {
-    grid-column: 1;
-  }
-
-  .product-card:nth-child(5) {
-    grid-column: 2;
+    gap: 1.5rem;
+    max-width: 100%;
   }
 
   .product-card {
@@ -76,14 +36,6 @@
   .products-grid {
     grid-template-columns: 1fr;
     gap: 1rem;
-  }
-
-  .product-card:nth-child(1),
-  .product-card:nth-child(2),
-  .product-card:nth-child(3),
-  .product-card:nth-child(4),
-  .product-card:nth-child(5) {
-    grid-column: span 1;
   }
 
   .product-card {
