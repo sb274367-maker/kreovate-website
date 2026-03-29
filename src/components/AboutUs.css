@@ -58,13 +58,55 @@
 }
 
 @media (max-width: 992px) {
+  .values-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
+
+  .about-text p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
   .about-content {
-    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    margin-top: 2rem;
+  }
+
+  .about-text p {
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+  }
+
+  .values-grid {
+    gap: 1rem;
+  }
+
+  .value-card {
+    padding: 1.25rem;
+  }
+
+  .value-title {
+    font-size: 1rem;
+  }
+
+  .value-desc {
+    font-size: 0.85rem;
   }
 }
 
 @media (max-width: 576px) {
   .values-grid {
     grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  .about-text p {
+    font-size: 0.9rem;
+  }
+
+  .value-card {
+    padding: 1rem;
   }
 }
