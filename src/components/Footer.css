@@ -6,9 +6,25 @@
 
 .footer-container {
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr;
-  gap: 3rem;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 3rem; 
   margin-bottom: var(--spacing-lg);
+}
+
+.footer-contact {
+  grid-column: span 1;
+}
+
+.footer-map {
+  grid-column: span 1;
+  display: flex;
+  align-items: stretch;
+}
+
+.footer-map iframe {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(255, 102, 0, 0.15);
 }
 
 .footer-brand .logo {
@@ -86,5 +102,20 @@
   .footer-container {
     grid-template-columns: 1fr;
     gap: 2rem;
+  }
+
+  .footer-map iframe {
+    height: 250px;
+  }
+}
+
+@media (max-width: 576px) {
+  .footer-container {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .footer-map iframe {
+    height: 200px;
   }
 }
